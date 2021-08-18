@@ -2,7 +2,7 @@ package com.example.calc_fragment
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentResultListener
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +10,12 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
+import kotlin.concurrent.fixedRateTimer
 
 
-class FragmentA : Fragment(R.layout.fragment_a), View.OnClickListener {
+class FragmentA : Fragment(), View.OnClickListener {
 
     lateinit var Add: Button
     lateinit var Sub: Button
@@ -54,12 +57,46 @@ class FragmentA : Fragment(R.layout.fragment_a), View.OnClickListener {
         fragment.setArguments(bundle)
 
 
+
+
+
+
         this.onStop()
-        activity?.supportFragmentManager?.beginTransaction()?.add(R.id.flayout1, fragment, "Bss")
-            ?.addToBackStack(null)?.commit()
+        activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.flayout1, fragment)
+            ?.addToBackStack("fA")?.commit()
+
+
 
 
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        var b1: Bundle = Bundle()
+
+
+//        fragmentManager?.setFragmentResultListener("Key", viewLifecycleOwner,{ _,b1 -> b1.getString("opp")?.let { s: String -> Action.setText(s)
+//            Output() }} )
+
+
+
+           // Toast.makeText(activity,"s",Toast.LENGTH_LONG).show()
+        }
+
+    fun Output(){
+        Result.isVisible = true
+        Input1.isVisible = true
+        Input2.isVisible = true
+        Action.isVisible = true
+        Reset.isVisible = true
+        Add.isVisible = false
+        Sub.isVisible = false
+        Mul.isVisible = false
+        Div.isVisible = false
+    }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -67,24 +104,17 @@ class FragmentA : Fragment(R.layout.fragment_a), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val inflate = inflater.inflate(R.layout.fragment_a, container, false)
 
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        Add = view.findViewById(R.id.add)
-        Sub = view.findViewById(R.id.sub)
-        Mul = view.findViewById(R.id.mul)
-        Div = view.findViewById(R.id.div)
-        Reset = view.findViewById(R.id.reset)
-        Action = view.findViewById(R.id.action)
-        Input1 = view.findViewById(R.id.Input1)
-        Input2 = view.findViewById(R.id.Input2)
-        Result = view.findViewById(R.id.result)
-
+        Add = inflate.findViewById(R.id.add)
+        Sub = inflate.findViewById(R.id.sub)
+        Mul = inflate.findViewById(R.id.mul)
+        Div = inflate.findViewById(R.id.div)
+        Reset = inflate.findViewById(R.id.reset)
+        Action = inflate.findViewById(R.id.action)
+        Input1 = inflate.findViewById(R.id.Input1)
+        Input2 = inflate.findViewById(R.id.Input2)
+        Result = inflate.findViewById(R.id.result)
 
         Result.isVisible = false
         Input1.isVisible = false
@@ -97,6 +127,14 @@ class FragmentA : Fragment(R.layout.fragment_a), View.OnClickListener {
         Mul.setOnClickListener(this)
         Div.setOnClickListener(this)
 
+        return inflate
+
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
 
         var bundle: Bundle? = this.arguments
         if (bundle?.getString("ans") != null) {
@@ -107,6 +145,8 @@ class FragmentA : Fragment(R.layout.fragment_a), View.OnClickListener {
                 bundle?.getString("opp").toString()
             )
         }
+        else
+            Toast.makeText(activity, " values", Toast.LENGTH_LONG).show()
 
     }
 
@@ -127,9 +167,12 @@ class FragmentA : Fragment(R.layout.fragment_a), View.OnClickListener {
         Input2.setText("Input2: " + input2)
         Result.setText("Result: " + ans)
 
+        activity?.fragmentManager?.popBackStackImmediate()
+
         Reset.setOnClickListener {
 
 
+            activity?.fragmentManager?.popBackStackImmediate()
             Result.isVisible = false
             Input1.isVisible = false
             Input2.isVisible = false
@@ -145,3 +188,4 @@ class FragmentA : Fragment(R.layout.fragment_a), View.OnClickListener {
     }
 
 }
+

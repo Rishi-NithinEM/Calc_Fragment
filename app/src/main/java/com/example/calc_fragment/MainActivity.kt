@@ -29,41 +29,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         fragmentA = FragmentA()
-        fragmentB= FragmentB()
-
         if(null == savedInstanceState)
             supportFragmentManager.beginTransaction()
-            .add(R.id.flayout1, fragmentA,"Add")
+            .add(R.id.flayout1, fragmentA,"fA")
             .commit()
 
     }
-
-    override fun onBackPressed() {
-
-        Add = findViewById(R.id.add)
-        Sub = findViewById(R.id.sub)
-        Mul = findViewById(R.id.mul)
-        Div = findViewById(R.id.div)
-        Reset = findViewById(R.id.reset)
-        Action = findViewById(R.id.action)
-        Input1 = findViewById(R.id.Input1)
-        Input2 = findViewById(R.id.Input2)
-        Result = findViewById(R.id.result)
-
-        if(Reset.isVisible) {
-            Result.isVisible = false
-            Input1.isVisible = false
-            Input2.isVisible = false
-            Action.isVisible = false
-            Reset.isVisible = false
-            Add.isVisible = true
-            Sub.isVisible = true
-            Mul.isVisible = true
-            Div.isVisible = true
-        }
-        else
-            fragmentManager.popBackStack()
-            super.onBackPressed()
-    }
-
 }
