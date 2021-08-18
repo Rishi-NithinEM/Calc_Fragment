@@ -54,10 +54,10 @@ class FragmentB : Fragment(R.layout.fragment_b), View.OnClickListener {
                 "Addition" -> {
                     answer = numb1 + numb2
                 }
-                "Subtraction" -> {
+                "Subtract" -> {
                     answer = numb1 - numb2
                 }
-                "Multiplication" -> {
+                "Multiply" -> {
                     answer = numb1 * numb2
                 }
                 "Division" -> {

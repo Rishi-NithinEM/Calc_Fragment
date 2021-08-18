@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity() {
             Div.isVisible = true
         }
         else
+            fragmentManager.popBackStack()
             super.onBackPressed()
     }
 

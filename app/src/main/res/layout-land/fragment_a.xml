@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,87 +9,104 @@
 
     <Button
         android:id="@+id/add"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
 
-        android:layout_marginStart="120dp"
-        android:layout_marginBottom="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sub"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="528dp"
+        android:layout_marginBottom="66dp"
         android:text="Addition"
         app:layout_constraintBottom_toTopOf="@+id/sub"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/sub"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-        android:layout_marginStart="120dp"
-        android:layout_marginBottom="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="544dp"
+        android:layout_marginBottom="136dp"
         android:text="Sub"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/mul"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/mul"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/div"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="68dp"
         android:text="Multiply"
         app:layout_constraintBottom_toTopOf="@+id/div"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/div"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="135dp"
         android:text="Divide"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/action"
-        android:layout_width="175dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Input1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="370dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-black"
-        android:layout_marginEnd="284dp"
-        android:layout_marginBottom="8dp"
         android:text="Action : "
         app:layout_constraintBottom_toTopOf="@+id/Input1"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/Input1"
-        android:layout_width="175dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Input2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="367dp"
+        android:layout_marginBottom="17dp"
         android:fontFamily="sans-serif-black"
-        android:layout_marginEnd="284dp"
-        android:layout_marginBottom="8dp"
         android:text="Input1 : "
         app:layout_constraintBottom_toTopOf="@+id/Input2"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/Input2"
-        android:layout_width="175dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/result"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="368dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-black"
-        android:layout_marginEnd="284dp"
-        android:layout_marginBottom="4dp"
         android:text="Input2 : "
         app:layout_constraintBottom_toTopOf="@+id/result"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="175dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/reset"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="373dp"
+        android:layout_marginBottom="32dp"
         android:fontFamily="sans-serif-black"
-        android:layout_marginEnd="284dp"
-        android:layout_marginBottom="40dp"
+        android:gravity="center_horizontal"
         android:text="Result : "
         app:layout_constraintBottom_toTopOf="@+id/reset"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -98,10 +115,12 @@
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="336dp"
-        android:layout_marginBottom="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="350dp"
+        android:layout_marginBottom="111dp"
         android:text="Reset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
