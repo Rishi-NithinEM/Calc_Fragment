@@ -55,7 +55,7 @@ class FragmentA : Fragment(R.layout.fragment_a), View.OnClickListener {
 
 
         this.onStop()
-        activity?.supportFragmentManager?.beginTransaction()?.add(R.id.flayout1, fragment,"Bss")
+        activity?.supportFragmentManager?.beginTransaction()?.add(R.id.flayout1, fragment, "Bss")
             ?.addToBackStack(null)?.commit()
 
 
