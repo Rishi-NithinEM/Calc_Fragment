@@ -12,8 +12,8 @@ import androidx.fragment.app.FragmentContainerView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var fragmentA: Fragment
-    lateinit var fragmentB: Fragment
+    lateinit var fragmentA:Fragment
+    lateinit var fragmentB:Fragment
     lateinit var Add: Button
     lateinit var Sub: Button
     lateinit var Mul: Button
@@ -29,12 +29,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         fragmentA = FragmentA()
-        fragmentB = FragmentB()
+        fragmentB= FragmentB()
 
-        if (null == savedInstanceState)
+        if(null == savedInstanceState)
             supportFragmentManager.beginTransaction()
-                .add(R.id.flayout1, fragmentA, "Add")
-                .commit()
+            .add(R.id.flayout1, fragmentA,"Add")
+            .commit()
 
     }
 
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         Input2 = findViewById(R.id.Input2)
         Result = findViewById(R.id.result)
 
-        if (Reset.isVisible) {
+        if(Reset.isVisible) {
             Result.isVisible = false
             Input1.isVisible = false
             Input2.isVisible = false
@@ -60,7 +60,8 @@ class MainActivity : AppCompatActivity() {
             Sub.isVisible = true
             Mul.isVisible = true
             Div.isVisible = true
-        } else
+        }
+        else
             super.onBackPressed()
     }
 
