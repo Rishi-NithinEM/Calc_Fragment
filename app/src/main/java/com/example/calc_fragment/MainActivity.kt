@@ -1,7 +1,9 @@
 package com.example.calc_fragment
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.accessibility.AccessibilityManager
 import android.widget.Button
@@ -33,7 +35,25 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .add(R.id.flayout1, fragmentA, "fA")
                 .commit()
+        else
+            supportFragmentManager.beginTransaction()
+                .add(R.id.flayout1, fragmentA, "fA")
+                .commit()
 
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+
+        super.onConfigurationChanged(newConfig)
+
+
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Log.i("landscape", "toString()")
+
+
+            if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT)
+                Log.i("portrait", "dfd")
+        }
     }
 
 }

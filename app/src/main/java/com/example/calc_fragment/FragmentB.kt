@@ -64,7 +64,7 @@ class FragmentB : Fragment() {
                 bundle?.putString("key",savedInstanceState.getString("key"))
                 pf.setArguments(bundle)
 
-                    activity?.supportFragmentManager?.beginTransaction()
+                activity?.supportFragmentManager?.beginTransaction()
                     ?.replace(R.id.flayout1, pf)
                     ?.addToBackStack("fA")?.commit()
 
@@ -81,6 +81,9 @@ class FragmentB : Fragment() {
 
             if (generateResult(Number1, Number2) != "") {
                 sendResult()
+            }
+            else{
+                Toast.makeText(activity, "values", Toast.LENGTH_LONG).show()
             }
 
         }
