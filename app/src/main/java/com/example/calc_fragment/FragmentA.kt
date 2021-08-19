@@ -79,9 +79,6 @@ class FragmentA : Fragment(), View.OnClickListener {
 
         val inflate = inflater.inflate(R.layout.fragment_a, container, false)
 
-//        activity?.supportFragmentManager?.beginTransaction()
-//            ?.replace(R.id.flayout1,FragmentA())
-//            ?.addToBackStack("fA")?.commit()
 
         if(savedInstanceState!=null){
             operation=savedInstanceState.getString("opp","")
@@ -177,23 +174,6 @@ class FragmentA : Fragment(), View.OnClickListener {
 
 
     }
-
-//    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-//        super.onViewStateRestored(savedInstanceState)
-//        if (savedInstanceState != null) {
-//            output=savedInstanceState.getString("result","")
-//            state = savedInstanceState.getInt("state")
-//            operation = savedInstanceState.getString("opp","")
-//
-//            if (state == 0)
-//                reset()
-//            else
-//                result()
-//        }
-//
-//
-//    }
-
 
 }
 

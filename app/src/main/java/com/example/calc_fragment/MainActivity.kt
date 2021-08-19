@@ -37,23 +37,23 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         else
             supportFragmentManager.beginTransaction()
-                .add(R.id.flayout1, fragmentA, "fA")
+                .replace(R.id.flayout1, FragmentA(), "fA")
                 .commit()
 
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
-
-        super.onConfigurationChanged(newConfig)
-
-
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Log.i("landscape", "toString()")
-
-
-            if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT)
-                Log.i("portrait", "dfd")
-        }
-    }
+//    override fun onConfigurationChanged(newConfig: Configuration) {
+//
+//        super.onConfigurationChanged(newConfig)
+//
+//
+//        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)
+//            Log.i("landscape", "toString()")
+//
+//
+//
+//        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT)
+//            Log.i("portrait", "dfd")
+//    }
 
 }

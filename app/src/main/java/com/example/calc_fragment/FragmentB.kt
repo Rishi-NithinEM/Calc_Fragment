@@ -13,11 +13,6 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModel
 
 
-class SharedViewMode : ViewModel(){
-
-
-}
-
 
 class FragmentB : Fragment() {
 
