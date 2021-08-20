@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,25 +15,23 @@
         android:layout_above="@+id/sub"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="473dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="100dp"
         android:text="Addition"
-        app:layout_constraintBottom_toTopOf="@+id/sub"
-        app:layout_constraintEnd_toEndOf="parent" />
+         />
 
     <Button
         android:id="@+id/sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_above="@+id/mul"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="481dp"
-        android:layout_marginBottom="97dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="106dp"
         android:text="Sub"
-        app:layout_constraintBottom_toTopOf="@+id/mul"
-        app:layout_constraintEnd_toEndOf="parent" />
+         />
 
     <Button
         android:id="@+id/mul"
@@ -42,11 +40,10 @@
         android:layout_above="@+id/div"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="62dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="250dp"
         android:text="Multiply"
-        app:layout_constraintBottom_toTopOf="@+id/div"
-        app:layout_constraintEnd_toEndOf="parent" />
+         />
 
     <Button
         android:id="@+id/div"
@@ -55,11 +52,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="98dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="256dp"
         android:text="Divide"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        />
 
     <TextView
         android:id="@+id/action"
@@ -67,12 +63,14 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/div"
         android:layout_alignParentEnd="true"
-        android:layout_centerInParent="true"
-        android:layout_marginEnd="377dp"
-        android:layout_marginBottom="56dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="130dp"
+        android:layout_gravity="center_horizontal"
+
         android:fontFamily="sans-serif-black"
         android:text=""
-        app:layout_constraintEnd_toEndOf="parent" />
+         />
 
     <Button
         android:id="@+id/reset"
@@ -81,10 +79,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="333dp"
-        android:layout_marginBottom="55dp"
-        android:text="Reset"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginTop="250dp"
+        android:layout_gravity="center_horizontal"
 
-</RelativeLayout>
+        android:text="Reset"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

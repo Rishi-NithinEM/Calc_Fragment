@@ -30,7 +30,7 @@ class FragmentA : Fragment(), View.OnClickListener {
 
     var output: String = ""
 
-    var operation: String = "x"
+    var operation: String = ""
 
     var state: Int = 0
 
@@ -78,7 +78,7 @@ class FragmentA : Fragment(), View.OnClickListener {
 
 
         if(savedInstanceState!=null){
-//            operation=savedInstanceState.getString("opp","")
+            operation=savedInstanceState.getString("opp","")
             state = savedInstanceState.getInt("state")
             output=savedInstanceState.getString("result","")
 
@@ -168,7 +168,7 @@ class FragmentA : Fragment(), View.OnClickListener {
         super.onSaveInstanceState(outState)
 
         outState.putInt("state", state)
-//        outState.putString("opp",operation)
+        outState.putString("opp",operation)
         outState.putString("result",output)
 
 

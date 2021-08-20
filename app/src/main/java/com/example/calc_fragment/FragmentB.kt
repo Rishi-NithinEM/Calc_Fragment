@@ -160,8 +160,8 @@ class FragmentB : Fragment() {
 //        Toast.makeText(activity,result,Toast.LENGTH_LONG).show()
 
 
-        fragmentManager?.setFragmentResult("Key", bundleOf("and" to res))
-        fragmentManager?.popBackStackImmediate()
+        activity?.supportFragmentManager?.setFragmentResult("Key", bundleOf("and" to res))
+        activity?.supportFragmentManager?.popBackStackImmediate()
 
 
     }
