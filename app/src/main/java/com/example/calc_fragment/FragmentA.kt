@@ -1,5 +1,7 @@
 package com.example.calc_fragment
 
+import android.content.res.Configuration
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.*
@@ -65,11 +67,6 @@ class FragmentA : Fragment(), View.OnClickListener {
 
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -81,7 +78,7 @@ class FragmentA : Fragment(), View.OnClickListener {
 
 
         if(savedInstanceState!=null){
-            operation=savedInstanceState.getString("opp","")
+//            operation=savedInstanceState.getString("opp","")
             state = savedInstanceState.getInt("state")
             output=savedInstanceState.getString("result","")
 
@@ -108,7 +105,8 @@ class FragmentA : Fragment(), View.OnClickListener {
 
         Reset.setOnClickListener {
 
-
+//            fragmentManager?.clearFragmentResult("key")
+//            operation=""
             reset()
             activity?.fragmentManager?.popBackStackImmediate()
 
@@ -128,6 +126,7 @@ class FragmentA : Fragment(), View.OnClickListener {
         Sub.isVisible = false
         Mul.isVisible = false
         Div.isVisible = false
+
 
     }
 
@@ -150,7 +149,6 @@ class FragmentA : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         fragmentManager?.setFragmentResultListener(
             "Key",
             viewLifecycleOwner
@@ -159,18 +157,21 @@ class FragmentA : Fragment(), View.OnClickListener {
 
                 result()
 
-
         }
-//        Toast.makeText(activity,"FragA",Toast.LENGTH_LONG).show()
     }
+
+
+
 
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
         outState.putInt("state", state)
-        outState.putString("opp",operation)
+//        outState.putString("opp",operation)
         outState.putString("result",output)
+
+
 
 
     }

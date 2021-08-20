@@ -19,7 +19,7 @@
         android:hint="Enter number 1"
         android:inputType="number"
         android:text=""
-        tools:ignore="SpeakableTextPresentCheck">
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
     </EditText>
 
@@ -35,7 +35,7 @@
         android:hint="Enter Number 2"
         android:inputType="number"
         android:text=""
-        tools:ignore="SpeakableTextPresentCheck">
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
     </EditText>
 

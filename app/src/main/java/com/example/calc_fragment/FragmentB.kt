@@ -53,7 +53,7 @@ class FragmentB : Fragment() {
                 fm.beginTransaction().remove(pf).commit()
 
                 val pf= FragmentB()
-                val bundle :Bundle = Bundle()
+                val bundle : Bundle? = Bundle()
                 bundle?.putString("val1",savedInstanceState.getString("val1"))
                 bundle?.putString("val2",savedInstanceState.getString("val2"))
                 bundle?.putString("key",savedInstanceState.getString("key"))
@@ -93,7 +93,7 @@ class FragmentB : Fragment() {
         outState.putString("key", ch)
         if(number1.text!=null)
         outState.putString("val1", number1.text.toString())
-        if(number2.text!=null)
+        if(number2.text!= null)
         outState.putString("val2", number2.text.toString())
     }
 
